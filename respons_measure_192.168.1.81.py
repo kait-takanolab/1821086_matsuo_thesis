@@ -8,13 +8,13 @@ import time
 import datetime
 
 for i in range(100):
-    url = 'https://kait.jp'
+    url = 'http://192.168.1.81/'
     res = requests.get(url)
     time_elapsed = res.elapsed.total_seconds()
     date = datetime.datetime.now()    
     print(date,':', time_elapsed)
     #ファイルに書き込み
-    with open('responselog.txt', 'a') as f:
+    with open('responselog_192.168.1.81.txt', 'a') as f:
         print(date, file=f)
         print(time_elapsed, file=f)
         time.sleep(1800)#30分ごとに計測

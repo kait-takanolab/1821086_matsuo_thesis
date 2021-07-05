@@ -1,0 +1,10 @@
+
+
+
+sqlite3 response//データ作成OR接続
+
+create table response81(id integer primary key, speed read,day,datetime text);
+//主キーにして被りを無くす。インサートで追加されるときはラストからになる(^▽^)
+
+insert into response81(speed,datetime) values('86.333','aaa-aaaa-aaaa');
+select * from response81;

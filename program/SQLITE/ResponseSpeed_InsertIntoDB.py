@@ -3,6 +3,33 @@ import sqlite3
 import requests
 import datetime
 
+
+def eva_score(list):
+    
+    #抽出した平均を評価
+    if 0<=list1[0] and list1[0]<=0.016:
+        evalution="S"
+
+    elif 0.017<=list1[0] and list1[0]<=0.099:
+        evalution="A"
+
+    elif 0.1<=list1[0] and list1[0]<=0.999:
+        evalution="B"
+
+    elif 1.0<=list1[0] and list1[0]<=9.999:
+        evalution="C"
+
+    elif 10.0<=list1[0]:
+        evalution="D"
+    return evalution
+
+
+#--------------------------
+#     
+#       192.168.1.81
+#
+#--------------------------
+
 #応答速度計測
 url = 'https://dot-blog.jp/'
 res = requests.get(url)
@@ -20,23 +47,165 @@ conn = sqlite3.connect(dbname)
 cur = conn.cursor()
 
 
-#応答速度DBへ挿入
+#応答速度テーブルへ計測結果を挿入
 setdb1 = (None,time_elapsed,dt_now)
 cur.execute("insert into response81 (id,speed,datetime) values (?,?,?)", setdb1)
 
-#応答速度DBから過去24時間の平均を取り出す
-cur.execute("select avg(speed) from response81 where datetime > datetime(datetime(), '+0 days', '-1 hours');")
+
+
+#抽出した現在応答速度を評価
+if 0<=time_elapsed and time_elapsed<=0.016:
+    evaluation_now="S"
+
+elif 0.017<=time_elapsed and time_elapsed<=0.099:
+    evaluation_now="A"
+
+elif 0.1<=time_elapsed and time_elapsed<=0.999:
+    evaluation_now="B"
+
+elif 1.0<=time_elapsed and time_elapsed<=9.999:
+    evaluation_now="C"
+
+elif 10.0<=time_elapsed:
+    evaluation_now="D"
+
+
+
+#応答速度テーブルから過去24時間の平均を取り出す
+cur.execute("select avg(speed) from response81 where datetime > datetime(datetime(), '-1 days', '+0 hours');")
 list1 = cur.fetchone()
-print (list1) 
+print (list1[0])
 
-"""
-#select結果取り出し1行
-cur.execute("select avg(speed) from response81 where datetime > '2021-07-05 14:00';")
+evaluation_ave=eva_score(list1)
+
+
+print("現在の速度：",evaluation_now)
+print("現在の評価：",evaluation_now)
+print("平均の速度：",evaluation_ave)
+print("平均の評価：",evaluation_ave)
+
+#評価テーブルへ挿入
+#ID　現在の速度　現在の評価　平均の速度　平均の評価　日時
+setdb2 = (None,time_elapsed,evaluation_now,list1[0],evaluation_ave,dt_now)
+cur.execute("insert into monitoring81 (id,now_speed,now_speed_score,ave_speed,ave_speed_score,datetime) values (?,?,?,?,?,?)", setdb2)
+
+#--------------------------
+#     
+#       192.168.1.82
+#
+#--------------------------
+
+
+#応答速度計測
+url = 'http://abehiroshi.la.coocan.jp/'
+res = requests.get(url)
+time_elapsed = res.elapsed.total_seconds()
+
+#現在時刻取得
+dt_now = datetime.datetime.now()
+
+
+#応答速度テーブルへ計測結果を挿入
+setdb1 = (None,time_elapsed,dt_now)
+cur.execute("insert into response82 (id,speed,datetime) values (?,?,?)", setdb1)
+
+
+
+#抽出した現在応答速度を評価
+if 0<=time_elapsed and time_elapsed<=0.016:
+    evaluation_now="S"
+
+elif 0.017<=time_elapsed and time_elapsed<=0.099:
+    evaluation_now="A"
+
+elif 0.1<=time_elapsed and time_elapsed<=0.999:
+    evaluation_now="B"
+
+elif 1.0<=time_elapsed and time_elapsed<=9.999:
+    evaluation_now="C"
+
+elif 10.0<=time_elapsed:
+    evaluation_now="D"
+
+
+
+#応答速度テーブルから過去24時間の平均を取り出す
+cur.execute("select avg(speed) from response82 where datetime > datetime(datetime(), '-1 days', '+0 hours');")
 list1 = cur.fetchone()
-print (list1)
-"""
+print (list1[0])
+
+evaluation_ave=eva_score(list1)
 
 
+print("現在の速度：",evaluation_now)
+print("現在の評価：",evaluation_now)
+print("平均の速度：",evaluation_ave)
+print("平均の評価：",evaluation_ave)
+
+#評価テーブルへ挿入
+#ID　現在の速度　現在の評価　平均の速度　平均の評価　日時
+setdb2 = (None,time_elapsed,evaluation_now,list1[0],evaluation_ave,dt_now)
+cur.execute("insert into monitoring82 (id,now_speed,now_speed_score,ave_speed,ave_speed_score,datetime) values (?,?,?,?,?,?)", setdb2)
+
+
+#--------------------------
+#     
+#       192.168.1.83
+#
+#--------------------------
+
+
+#応答速度計測
+url = 'https://kbook.sakura.ne.jp/it/kbook.cgi'
+res = requests.get(url)
+time_elapsed = res.elapsed.total_seconds()
+
+#現在時刻取得
+dt_now = datetime.datetime.now()
+
+
+#応答速度テーブルへ計測結果を挿入
+setdb1 = (None,time_elapsed,dt_now)
+cur.execute("insert into response83 (id,speed,datetime) values (?,?,?)", setdb1)
+
+
+
+#抽出した現在応答速度を評価
+if 0<=time_elapsed and time_elapsed<=0.016:
+    evaluation_now="S"
+
+elif 0.017<=time_elapsed and time_elapsed<=0.099:
+    evaluation_now="A"
+
+elif 0.1<=time_elapsed and time_elapsed<=0.999:
+    evaluation_now="B"
+
+elif 1.0<=time_elapsed and time_elapsed<=9.999:
+    evaluation_now="C"
+
+elif 10.0<=time_elapsed:
+    evaluation_now="D"
+
+
+
+#応答速度テーブルから過去24時間の平均を取り出す
+cur.execute("select avg(speed) from response83 where datetime > datetime(datetime(), '-1 days', '+0 hours');")
+list1 = cur.fetchone()
+print (list1[0])
+
+evaluation_ave=eva_score(list1)
+
+
+print("現在の速度：",evaluation_now)
+print("現在の評価：",evaluation_now)
+print("平均の速度：",evaluation_ave)
+print("平均の評価：",evaluation_ave)
+
+
+#評価テーブルへ挿入
+#ID　現在の速度　現在の評価　平均の速度　平均の評価　日時
+setdb2 = (None,time_elapsed,evaluation_now,list1[0],evaluation_ave,dt_now)
+cur.execute("insert into monitoring83 (id,now_speed,now_speed_score,ave_speed,ave_speed_score,datetime) values (?,?,?,?,?,?)", setdb2)
 
 
 # データベースへコミット。これで変更が反映される。

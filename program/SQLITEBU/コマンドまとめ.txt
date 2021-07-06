@@ -1,0 +1,83 @@
+コマンドプロンプトでSQLITE３がある場所へ移動
+
+
+データベース作成
+sqlite3 ◆
+
+
+テーブル作成
+create table ◆(shiten text, sales);
+
+テーブル確認
+.tables
+
+テーブルの中身を表示
+select * from table名;
+
+テーブルの要素一覧
+.schema
+
+
+合計を表示するtotalは浮動小数点
+select sum(sales), total(sales) from uriage;
+
+グループ単位で平均を出す
+select gender, avg(point) from user group by gender;
+select avg(speed) from response81;
+
+select name, avg(point) from user group by name;
+
+
+select * from response81 where datetime like '2021-07-05 12%';
+
+
+テキストファイルでレスポンス速度と時間を紐づけして管理している。
+
+SQLITEを試してみたくなった。
+
+
+14時以降を抽出
+select * from response81 where datetime > '2021-07-05 14:00';
+
+14時以降の平均を出す
+select avg(speed) from response81 where datetime > '2021-07-05 14:00';
+
+#日付操作
+SELECT datetime(datetime(), '+0 days', '-1 hours');
+
+
+select avg(speed) from response81 where datetime > now();
+
+
+テーブルresponse81でdatetimeカラムを見て
+今から1時間前に更新されたspeedカラムの平均を出す。
+select avg(speed) from response81 where datetime > datetime(datetime(), '+0 days', '-1 hours');
+24時間の平均を出す。
+select avg(speed) from response81 where datetime > datetime(datetime(), '-1 days', '+0 hours');
+
+テキストデータから平均を抽出するプログラムを組んで使っていたが、
+SQLITEの便利さに気づいてしまった。
+テーブルがあるとラズパイ数台の応答速度を管理しやすい。検索をかけられるのは魅力的。
+
+
+・Python＋SQLITEで応答速度をDBへ保存
+
+・過去24時間のデータを抽出するクエリを考えた。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

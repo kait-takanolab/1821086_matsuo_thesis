@@ -12,7 +12,7 @@
 
 ### <img src="https://icooon-mono.com/i/icon_12063/icon_120631_64.png" height="30px;" /> ゼミ発表用スライド
 
-- https://github.com/kait-takanolab/1821086_matsuo_thesis/blob/main/1821086_matsuo_sotsuken.pptx
+- https://github.com/kait-takanolab/1821086_matsuo_thesis/blob/main/meeting/1821086_matsuo_thesis.pptx
 
 ### <img src="https://icooon-mono.com/i/icon_12063/icon_120631_64.png" height="30px;" /> 中間発表用スライド
 

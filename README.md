@@ -1,11 +1,19 @@
-# 1821086_matsuo_thesis
+
+<h2 align="center">1821086_matsuo_thesis</h2>
 
 
-### 実験用プログラム
+### <img src="https://icooon-mono.com/i/icon_16004/icon_160041_64.png" height="30px;" /> 実験用プログラム
 
 - https://github.com/kait-takanolab/1821086_matsuo_thesis/tree/main/program
 
+### <img src="https://icooon-mono.com/i/icon_11129/icon_111291_64.png" height="30px;" /> 関連研究
 
-### ゼミ発表用スライド
+- https://github.com/kait-takanolab/1821086_matsuo_thesis/tree/main/%E9%96%A2%E9%80%A3%E7%A0%94%E7%A9%B6
+
+### <img src="https://icooon-mono.com/i/icon_12063/icon_120631_64.png" height="30px;" /> ゼミ発表用スライド
+
+- https://github.com/kait-takanolab/1821086_matsuo_thesis/blob/main/1821086_matsuo_sotsuken.pptx
+
+### <img src="https://icooon-mono.com/i/icon_12063/icon_120631_64.png" height="30px;" /> 中間発表用スライド
 
 - https://github.com/kait-takanolab/1821086_matsuo_thesis/blob/main/1821086_matsuo_sotsuken.pptx

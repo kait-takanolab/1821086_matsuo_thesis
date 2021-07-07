@@ -1,4 +1,4 @@
-
+# -*- coding: utf-8 -*-
 import sqlite3
 import requests
 import datetime
@@ -31,7 +31,7 @@ def eva_score(list):
 #--------------------------
 
 #応答速度計測
-url = 'https://dot-blog.jp/'
+url = 'http://192.168.1.81'
 res = requests.get(url)
 time_elapsed = res.elapsed.total_seconds()
 
@@ -74,15 +74,17 @@ elif 10.0<=time_elapsed:
 #応答速度テーブルから過去24時間の平均を取り出す
 cur.execute("select avg(speed) from response81 where datetime > datetime(datetime(), '-1 days', '+0 hours');")
 list1 = cur.fetchone()
-print (list1[0])
 
 evaluation_ave=eva_score(list1)
 
 
-print("現在の速度：",evaluation_now)
-print("現在の評価：",evaluation_now)
-print("平均の速度：",evaluation_ave)
-print("平均の評価：",evaluation_ave)
+print("----192.168.1.81----")
+print("now_speed:",evaluation_now)
+print("now_eva:",evaluation_now)
+print("ave_speed:",evaluation_ave)
+print("sve_eva:",evaluation_ave)
+
+
 
 #評価テーブルへ挿入
 #ID　現在の速度　現在の評価　平均の速度　平均の評価　日時
@@ -97,7 +99,7 @@ cur.execute("insert into monitoring81 (id,now_speed,now_speed_score,ave_speed,av
 
 
 #応答速度計測
-url = 'http://abehiroshi.la.coocan.jp/'
+url = 'http://192.168.1.82'
 res = requests.get(url)
 time_elapsed = res.elapsed.total_seconds()
 
@@ -132,15 +134,15 @@ elif 10.0<=time_elapsed:
 #応答速度テーブルから過去24時間の平均を取り出す
 cur.execute("select avg(speed) from response82 where datetime > datetime(datetime(), '-1 days', '+0 hours');")
 list1 = cur.fetchone()
-print (list1[0])
 
 evaluation_ave=eva_score(list1)
 
 
-print("現在の速度：",evaluation_now)
-print("現在の評価：",evaluation_now)
-print("平均の速度：",evaluation_ave)
-print("平均の評価：",evaluation_ave)
+print("----192.168.1.82----")
+print("now_speed:",evaluation_now)
+print("now_eva:",evaluation_now)
+print("ave_speed:",evaluation_ave)
+print("sve_eva:",evaluation_ave)
 
 #評価テーブルへ挿入
 #ID　現在の速度　現在の評価　平均の速度　平均の評価　日時
@@ -156,7 +158,7 @@ cur.execute("insert into monitoring82 (id,now_speed,now_speed_score,ave_speed,av
 
 
 #応答速度計測
-url = 'https://kbook.sakura.ne.jp/it/kbook.cgi'
+url = 'http://192.168.1.83'
 res = requests.get(url)
 time_elapsed = res.elapsed.total_seconds()
 
@@ -191,15 +193,15 @@ elif 10.0<=time_elapsed:
 #応答速度テーブルから過去24時間の平均を取り出す
 cur.execute("select avg(speed) from response83 where datetime > datetime(datetime(), '-1 days', '+0 hours');")
 list1 = cur.fetchone()
-print (list1[0])
 
 evaluation_ave=eva_score(list1)
 
 
-print("現在の速度：",evaluation_now)
-print("現在の評価：",evaluation_now)
-print("平均の速度：",evaluation_ave)
-print("平均の評価：",evaluation_ave)
+print("----192.168.1.83----")
+print("now_speed:",evaluation_now)
+print("now_eva:",evaluation_now)
+print("ave_speed:",evaluation_ave)
+print("sve_eva:",evaluation_ave)
 
 
 #評価テーブルへ挿入

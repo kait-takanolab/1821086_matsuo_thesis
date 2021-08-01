@@ -27,6 +27,7 @@
 - <a href="https://github.com/kait-takanolab/1821086_matsuo_thesis/blob/main/program/nginx%E3%82%B3%E3%83%B3%E3%83%95%E3%82%A3%E3%82%B0%E6%9B%B8%E3%81%8D%E6%8F%9B%E3%81%88%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0/LoadBalancer_method1.py">LoadBalancer_methodX.py</a><br>
 ロードバランサーの割り振りを変えるプログラム。<br>
     - method1
+    <a href="https://github.com/kait-takanolab/1821086_matsuo_thesis/blob/main/program/LoadBalancer/LoadBalancer_method1.py">LoadBalancer_method1.py</a>
     - method2
     - method3
 - workspace/measure_evaluation_InsertDB.py<br>

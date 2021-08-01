@@ -24,11 +24,16 @@
 
 ## <img src="https://icooon-mono.com/i/icon_15821/icon_158211_64.png" height="30px;" /> プログラムの説明
 
-- <a href="https://github.com/kait-takanolab/1821086_matsuo_thesis/blob/main/program/nginx%E3%82%B3%E3%83%B3%E3%83%95%E3%82%A3%E3%82%B0%E6%9B%B8%E3%81%8D%E6%8F%9B%E3%81%88%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0/LoadBalancer_method1.py">LoadBalancer_methodX.py</a><br>
-ロードバランサーの割り振りを変えるプログラム。<br>
+- <a href=" ">LoadBalancer_methodX.py</a>ロードバランサーの割り振りを変えるプログラム。<br>
     - method1
     <a href="https://github.com/kait-takanolab/1821086_matsuo_thesis/blob/main/program/LoadBalancer/LoadBalancer_method1.py">LoadBalancer_method1.py</a>
+    測定した結果や評価が保存されているDBへアクセス。
+D評価のサーバが現れたらコンフィグの重みづけを変更
+（D評価サーバへの接続は1/10に制限される）
+最後にコンフィグの内容をLBに適用させる処理(再起動不要なnginx-reload)を実行
+    
     - method2
+    
     - method3
 - workspace/measure_evaluation_InsertDB.py<br>
 応答速度の計測、現在速と過去24時間の平均速を抽出し、評価。これをへDB挿入するプログラム。<br>

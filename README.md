@@ -26,7 +26,7 @@
 - workspace/LoadBalancer_methodX.py<br>
 ロードバランサーの割り振りを変えるプログラム。<br>
 <br>
-- method1
+  -method1
 測定した結果や評価が保存されているDBへアクセス。<br>
 D評価のサーバが現れたらコンフィグの重みづけを変更<br>
 （D評価サーバへの接続は1/10に制限される）<br>

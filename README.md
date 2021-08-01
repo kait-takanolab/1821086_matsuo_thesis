@@ -21,3 +21,21 @@
 ### <img src="https://icooon-mono.com/i/icon_12063/icon_120631_64.png" height="30px;" /> 中間発表_発表前最終調整
 
 - https://github.com/kait-takanolab/1821086_matsuo_thesis/blob/main/%E7%99%BA%E8%A1%A8%E7%94%A8/1821086_%E4%B8%AD%E9%96%93%E7%99%BA%E8%A1%A8.pptx
+
+### <img src="https://icooon-mono.com/i/icon_15821/icon_158211_64.png" height="30px;" /> プログラムの説明
+・workspace/LoadBalancer_methodX.py
+ロードバランサーの割り振りを変えるプログラム。
+
+<method1>
+測定した結果や評価が保存されているDBへアクセス。
+D評価のサーバが現れたらコンフィグの重みづけを変更
+（D評価サーバへの接続は1/10に制限される）
+最後にコンフィグの内容をLBに適用させる処理(再起動不要なnginx-reload)を実行
+<method2>
+作成中
+<method3>
+作成中
+
+・workspace/measure_evaluation_InsertDB.py
+応答速度の計測、現在速と過去24時間の平均速を抽出し、評価。
+これをDB挿入している。

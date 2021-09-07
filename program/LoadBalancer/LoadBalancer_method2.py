@@ -25,20 +25,18 @@ conn = sqlite3.connect(dbname)
 cur = conn.cursor()
 
 
-#応答速度テーブルから過去24時間の平均を取り出す
+#応答速度テーブルから過去24時間の平均を取り出すDATETIMEで判断してる。
 cur.execute("select avg(speed) from response81 where datetime > datetime(datetime(), '-1 days', '+0 hours');")
 list1 = cur.fetchone()
 
-#応答速度テーブルから過去24時間の平均を取り出す
 cur.execute("select avg(speed) from response82 where datetime > datetime(datetime(), '-1 days', '+0 hours');")
 list2 = cur.fetchone()
 
-#応答速度テーブルから過去24時間の平均を取り出す
 cur.execute("select avg(speed) from response83 where datetime > datetime(datetime(), '-1 days', '+0 hours');")
 list3 = cur.fetchone()
 
 
-
+#一応表示させる
 print("----192.168.1.81の平均----")
 print("ave_speed:",list1[0])
 
@@ -50,46 +48,40 @@ print("ave_speed:",list3[0])
 
 
 #過去２４時間の平均で最もレスポンスが良い(値が小さい)サーバを選ぶ。
-
-
-
-
 minmam = min(list1[0],list2[0],list3[0])  
 
-if minmam == list1[0]:
-    print('24時間でサーバ81が調子が良い')
-    
-    
-    
-    
 
-#------------------------------
-"""
+
+#--------------コンフィグ書き換え----------------
+
 #既に決まっているところはそのまま書くよ。
 f = open('/etc/nginx/nginx.conf', 'w', encoding='UTF-8')
 datalist1 = ['user www-data;\n','worker_processes auto;\n','pid /run/nginx.pid;\n','include /etc/nginx/modules-enabled/*.conf;\n','events {\n','	worker_connections 768;\n','}\n','http {\n','	include /etc/nginx/mime.types;\n','gzip on;\n','gzip_vary on;\n','upstream backend1{\n']
 f.writelines(datalist1)
 
-#D評価サーバが現れたら重みを下げる処理
-if server_81 == "D":
+
+if minmam == list1[0]:#81が平均最速なら
+    print('\n過去24時間で「サーバ81」が一番応答速度が速い')
+    datalist2 = ['server 192.168.1.81 weight=1;\n']
+    f.writelines(datalist2)
+else:
     datalist2 = ['server 192.168.1.81 weight=10;\n']
     f.writelines(datalist2)
-else:
-    datalist2 = ['server 192.168.1.81;\n']
-    f.writelines(datalist2)
     
-if server_82 == "D":
+if minmam == list2[0]:#82が平均最速なら
+    print('\n過去24時間で「サーバ82」が一番応答速度が速い')
+    datalist3 = ['server 192.168.1.82 weight=1;\n']
+    f.writelines(datalist3)
+else:
     datalist3 = ['server 192.168.1.82 weight=10;\n']
     f.writelines(datalist3)
-else:
-    datalist3 = ['server 192.168.1.82;\n']
-    f.writelines(datalist3)
 
-if server_83 == "D":
-    datalist4 = ['server 192.168.1.83 weight=10;\n']
+if minmam == list3[0]:#83が平均最速なら
+    print('\n過去24時間で「サーバ83」が一番応答速度が速い')
+    datalist4 = ['server 192.168.1.83 weight=1;\n']
     f.writelines(datalist4)
 else:
-    datalist4 = ['server 192.168.1.83;\n']
+    datalist4 = ['server 192.168.1.83 weight=10;\n']
     f.writelines(datalist4)
 
 datalist5 = ['}\n','server{\n','listen 80;\n','server_name localhost;\n','location /{\n','proxy_pass http://backend1;\n','}\n','}\n','}\n']
@@ -104,4 +96,4 @@ subprocess.run(['/home/pi/tools/nginxrestart.sh'])
 
 print("good")
 
-"""
+

@@ -1,3 +1,8 @@
+テーブルの内容を削除
+delete from monitoring83;
+
+
+
 コマンドプロンプトでSQLITE３がある場所へ移動
 
 

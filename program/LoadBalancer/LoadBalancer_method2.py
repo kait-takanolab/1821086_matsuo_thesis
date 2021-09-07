@@ -4,11 +4,20 @@ Created on Fri Jul  2 15:57:12 2021
 
 @author: 1821086
 
-流れ：
-測定した結果や評価が保存されているDBへアクセス。
-D評価のサーバが現れたらコンフィグの重みづけを変更
-（D評価サーバへの接続は1/10に制限される）
-最後にコンフィグの内容を適用させる処理を実行
+説明：
+メソッド2は応答速度DBから過去24時間の平均を算出し、どのサーバが平均して良い結果を出しているのか判断。
+一番良い結果(平均応答速度が最速)のサーバに多く割り振るように動的なロードバランサを作った。
+
+重みづけの処理では
+平均最速サーバに90%割り振るようにした。
+つまり、10回に１回最速サーバ以外に飛ばされるが、負荷分散の観点からこの仕組みで良い気がする。
+
+重みに関しては100％最速サーバに割り振るのが良いか、90％程度割り振るのが良いのか不明。
+適宜、実験などで判断するのがよさそう。
+
+最後にコンフィグの内容を保存し、NGINXに適用させる処理を実行している。
+この適用にロードバランサの再起動は不要なので、稼働率が落ちることはない。
+
 
 """
 
@@ -75,33 +84,6 @@ elif minmam == list3[0]:#82が平均最速なら
     datalist2 = ['server 192.168.1.81 weight=1;\n server 192.168.1.82 weight=1;\n server 192.168.1.83 weight=10;\n']
     f.writelines(datalist2)
 
-
-"""
-if minmam == list1[0]:#81が平均最速なら
-    print('\n過去24時間で「サーバ81」が一番応答速度が速い')
-    datalist2 = ['server 192.168.1.81 weight=1;\n']
-    f.writelines(datalist2)
-else:
-    datalist2 = ['server 192.168.1.81 weight=10;\n']
-    f.writelines(datalist2)
-    
-if minmam == list2[0]:#82が平均最速なら
-    print('\n過去24時間で「サーバ82」が一番応答速度が速い')
-    datalist3 = ['server 192.168.1.82 weight=1;\n']
-    f.writelines(datalist3)
-else:
-    datalist3 = ['server 192.168.1.82 weight=10;\n']
-    f.writelines(datalist3)
-
-if minmam == list3[0]:#83が平均最速なら
-    print('\n過去24時間で「サーバ83」が一番応答速度が速い')
-    datalist4 = ['server 192.168.1.83 weight=1;\n']
-    f.writelines(datalist4)
-else:
-    datalist4 = ['server 192.168.1.83 weight=10;\n']
-    f.writelines(datalist4)
-"""
-    
 
 datalist5 = ['}\n','server{\n','listen 80;\n','server_name localhost;\n','location /{\n','proxy_pass http://backend1;\n','}\n','}\n','}\n']
 

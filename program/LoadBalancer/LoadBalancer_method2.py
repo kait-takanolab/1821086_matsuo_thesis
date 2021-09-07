@@ -24,24 +24,47 @@ conn = sqlite3.connect(dbname)
 # sqliteを操作するカーソルオブジェクトを作成
 cur = conn.cursor()
 
-#monitoringテーブルの最後の行から現在スピード評価の値を取り出す
 
-#81現在評価の取り出し
-cur.execute("SELECT now_speed_score FROM monitoring81 ORDER BY id DESC LIMIT 1;")
+#応答速度テーブルから過去24時間の平均を取り出す
+cur.execute("select avg(speed) from response81 where datetime > datetime(datetime(), '-1 days', '+0 hours');")
 list1 = cur.fetchone()
-server_81=list1[0];
 
-#82現在評価の取り出し
-cur.execute("SELECT now_speed_score FROM monitoring82 ORDER BY id DESC LIMIT 1;")
+#応答速度テーブルから過去24時間の平均を取り出す
+cur.execute("select avg(speed) from response82 where datetime > datetime(datetime(), '-1 days', '+0 hours');")
 list2 = cur.fetchone()
-server_82=list2[0];
 
-#83現在評価の取り出し
-cur.execute("SELECT now_speed_score FROM monitoring83 ORDER BY id DESC LIMIT 1;")
+#応答速度テーブルから過去24時間の平均を取り出す
+cur.execute("select avg(speed) from response83 where datetime > datetime(datetime(), '-1 days', '+0 hours');")
 list3 = cur.fetchone()
-server_83=list3[0];
-#------------------------------
 
+
+
+print("----192.168.1.81の平均----")
+print("ave_speed:",list1[0])
+
+print("----192.168.1.82の平均----")
+print("ave_speed:",list2[0])
+
+print("----192.168.1.83の平均----")
+print("ave_speed:",list3[0])
+
+
+#過去２４時間の平均で最もレスポンスが良い(値が小さい)サーバを選ぶ。
+
+
+
+
+minmam = min(list1[0],list2[0],list3[0])  
+
+if minmam == list1[0]:
+    print('24時間でサーバ81が調子が良い')
+    
+    
+    
+    
+
+#------------------------------
+"""
 #既に決まっているところはそのまま書くよ。
 f = open('/etc/nginx/nginx.conf', 'w', encoding='UTF-8')
 datalist1 = ['user www-data;\n','worker_processes auto;\n','pid /run/nginx.pid;\n','include /etc/nginx/modules-enabled/*.conf;\n','events {\n','	worker_connections 768;\n','}\n','http {\n','	include /etc/nginx/mime.types;\n','gzip on;\n','gzip_vary on;\n','upstream backend1{\n']
@@ -81,4 +104,4 @@ subprocess.run(['/home/pi/tools/nginxrestart.sh'])
 
 print("good")
 
-
+"""

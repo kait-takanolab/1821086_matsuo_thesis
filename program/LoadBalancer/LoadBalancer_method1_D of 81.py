@@ -75,10 +75,7 @@ datalist5 = ['}\n','server{\n','listen 80;\n','server_name localhost;\n','locati
 f.writelines(datalist5)
 f.close()
 
-
 #ロードバランサに処理を適用させる。（reload実行の為シェルを呼び出す）
 subprocess.run(['/home/pi/tools/nginxrestart.sh'])
 
 print("good")
-
-

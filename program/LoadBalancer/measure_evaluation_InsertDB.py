@@ -86,7 +86,7 @@ evaluation_ave=eva_score(list1)
 print("----192.168.1.81----")
 print("now_speed:",time_elapsed)
 print("now_eva:",evaluation_now)
-print("ave_speed:",list1[0])
+print("ave_speed:",list1)
 print("sve_eva:",evaluation_ave)
 
 
@@ -146,7 +146,7 @@ evaluation_ave=eva_score(list1)
 print("----192.168.1.82----")
 print("now_speed:",time_elapsed)
 print("now_eva:",evaluation_now)
-print("ave_speed:",list1[0])
+print("ave_speed:",list1)
 print("sve_eva:",evaluation_ave)
 
 #評価テーブルへ挿入
@@ -205,7 +205,7 @@ evaluation_ave=eva_score(list1)
 print("----192.168.1.83----")
 print("now_speed:",time_elapsed)
 print("now_eva:",evaluation_now)
-print("ave_speed:",list1[0])
+print("ave_speed:",list1)
 print("sve_eva:",evaluation_ave)
 
 

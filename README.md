@@ -21,3 +21,8 @@
 ### <img src="https://icooon-mono.com/i/icon_12063/icon_120631_64.png" height="30px;" /> 中間発表_発表前最終調整
 
 - https://github.com/kait-takanolab/1821086_matsuo_thesis/blob/main/%E7%99%BA%E8%A1%A8%E7%94%A8/1821086_%E4%B8%AD%E9%96%93%E7%99%BA%E8%A1%A8.pptx
+
+### <img src="https://icooon-mono.com/i/icon_15815/icon_158151_64.png" /> 卒論（下書き段階）
+
+- https://github.com/kait-takanolab/1821086_matsuo_thesis/blob/main/%E7%99%BA%E8%A1%A8%E7%94%A8/1821086-matsuo_thesis.docx
+

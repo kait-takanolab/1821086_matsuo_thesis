@@ -1,0 +1,17 @@
+実験のコマンドメモ
+
+https://qiita.com/hana_shin/items/b1d8cd559d1a326f4d42
+
+メモリに1Gを固定負荷(指定値はバイト)
+sudo stress -m 1 --vm-bytes 1073741824 --vm-hang 0 -q &
+
+4コア全部使う
+sudo stress -c 4
+
+sudo tc qdisc add dev wlan0 root tbf limit 200b buffer 100b rate 200bps
+
+メモリ状態確認
+ps -C stress -o command,pid,ppid,rss
+
+解放処理
+pkill stress

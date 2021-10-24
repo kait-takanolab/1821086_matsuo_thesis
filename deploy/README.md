@@ -3,7 +3,7 @@
 
 提案システムを再現するにはこのdeployをラズベリーパイ上にクローンします。<br>
 git cloneでプログラムを配備する手順を下記にて説明します。<br>
-「mkdir{ディレクトリ名}」でディレクトリを作成<br>
+「mkdir{ディレクトリ名}」でプログラムを配置する場所を作成<br>
 「cd {作成したディレクトリ名}」で移動<br>
 「 git clone https://github.com/kait-takanolab/1821086_matsuo_thesis.git」を実行し、クローンする<br>
 

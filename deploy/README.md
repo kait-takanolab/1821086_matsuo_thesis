@@ -9,7 +9,7 @@ Webserver<br>
              └ pdo_search_form.html<br>
 
 ディレクトリ：Webserver<br>
-Webサーバで動かす「検索システム」です。<br>
+本提案システムのWebサーバ側で動かす「検索システム」のプログラムです。<br>
 Apache、PHPをインストールした後「var/www/html」にファイルを配備すると再現できます。<br>
 <br>
 

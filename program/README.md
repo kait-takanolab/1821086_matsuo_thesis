@@ -13,7 +13,7 @@ LoadBalancer.py(提案システム)<br>
 measure_evaluation_InsertDB.py(提案システム)<br>
 各サーバの速度を計測、評価を行いデータベース(response.db)へ挿入する。<br>
 
-nginxrestart.sh(提案システム)<br>
+nginxrestart.sh<br>
 Nginxを再読み込みしてコンフィグを適用させる。当プログラムはLB内で呼び出して実行<br>
 
 roop_LoadBalancer.sh<br>

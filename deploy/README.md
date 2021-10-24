@@ -13,7 +13,6 @@ Webserver<br>
 Apache、PHPをインストールした後「var/www/html」にファイルを配備すると再現できます。<br>
 <br>
 
-
 LoadBalancer<br>
  ├ LoadBalancer.py<br>
  ├ measure_evaluation_InsertDB.py<br>
@@ -22,7 +21,6 @@ LoadBalancer<br>
  └ roop_LoadBalancer.sh<br>
 <br>
 
-<br>
 ディレクトリ:LoadBalancer<br>
 提案システムとして設計開発した動的ロードバランサのプロトタイプを動かすPythonプログラムやシェルがあります。<br>
 実装方法の詳細は卒論の4章にあります。<br>

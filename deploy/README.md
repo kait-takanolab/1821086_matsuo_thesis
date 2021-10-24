@@ -1,24 +1,26 @@
 
 <h2 align="center">デプロイについて</h2>
 
-Webserver<br>
- └ var<br>
-     └ www<br>
-         └ html<br>
-             ├ pdo_search.php<br>
-             └ pdo_search_form.html<br>
+deploy<br>
+ ├ LoadBalancer<br>
+ ｜  ├ LoadBalancer.py<br>
+ ｜  ├ measure_evaluation_InsertDB.py<br>
+ ｜  ├ nginxrestart.sh<br>
+ ｜  ├ response<br>
+ ｜  └ roop_LoadBalancer.sh<br>
+ ├ Webserver<br>
+ ｜  └ var<br>
+ ｜      └ www<br>
+ ｜          └ html<br>
+ ｜              ├ pdo_search.php<br>
+ ｜              └ pdo_search_form.html<br>
+ ├ method2動作の様子.wmv<br>
+ └ README.md<br>
+
 
 ディレクトリ：Webserver<br>
 本提案システムのWebサーバ側で動かす「検索システム」のプログラムです。<br>
 Apache、PHPをインストールした後「var/www/html」にファイルを配備すると再現できます。<br>
-<br>
-
-LoadBalancer<br>
- ├ LoadBalancer.py<br>
- ├ measure_evaluation_InsertDB.py<br>
- ├ nginxrestart.sh<br>
- ├ response<br>
- └ roop_LoadBalancer.sh<br>
 <br>
 
 ディレクトリ:LoadBalancer<br>

@@ -1,4 +1,24 @@
 
 <h2 align="center">プログラムの説明</h2>
 
-<img src="https://raw.githubusercontent.com/kait-takanolab/1821086_matsuo_thesis/main/%E7%94%BB%E5%83%8F/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E8%AA%AC%E6%98%8E.png?token=AS5MVBSF5QJ6HDISEXEMPBDBIIVAO">
+LoadBalancer_method1.py(試作)
+現在の応答速度がD評価のサーバが現れたら直ちに接続が制限されれる。(1/10に制限)
+
+LoadBalancer_method2.py(試作)
+応答速度DBから過去24時間の平均を算出し、どのサーバが平均して良い結果を出しているのか判断。一番良い結果(平均応答速度が最速)のサーバに多く割り振るように動的なロードバランサを作った。
+
+LoadBalancer.py(提案システム)
+卒論で使うのはこれ。設計開発したロードバランサのプロトタイプ。内容は割り振り方法はmethod2と同じ。出力結果を観やすいように改良してある。
+
+measure_evaluation_InsertDB.py(提案システム)
+各サーバの速度を計測、評価を行いデータベース(response.db)へ挿入する。
+
+nginxrestart.sh(提案システム)
+Nginxを再読み込みしてコンフィグを適用させる。当プログラムはLB内で呼び出して実行
+
+roop_LoadBalancer.sh
+２つのプログラムを同時に実行しループするようにしたシェル。60秒ごとに実行される。
+
+
+
+

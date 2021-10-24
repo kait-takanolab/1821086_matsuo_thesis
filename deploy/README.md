@@ -1,17 +1,27 @@
 
 <h2 align="center">デプロイについて</h2>
 
-
-ディレクトリ：Webserver<br>
-Webサーバで動かす「検索システム」です。<br>
-Apache、PHPをインストールした後「var/www/html」にファイルを配備すると再現できます。<br>
-<br>
 Webserver<br>
  └ var<br>
      └ www<br>
          └ html<br>
              ├ pdo_search.php<br>
              └ pdo_search_form.html<br>
+
+ディレクトリ：Webserver<br>
+Webサーバで動かす「検索システム」です。<br>
+Apache、PHPをインストールした後「var/www/html」にファイルを配備すると再現できます。<br>
+<br>
+
+
+LoadBalancer<br>
+ ├ LoadBalancer.py<br>
+ ├ measure_evaluation_InsertDB.py<br>
+ ├ nginxrestart.sh<br>
+ ├ response<br>
+ └ roop_LoadBalancer.sh<br>
+<br>
+
 <br>
 ディレクトリ:LoadBalancer<br>
 提案システムとして設計開発した動的ロードバランサのプロトタイプを動かすPythonプログラムやシェルがあります。<br>

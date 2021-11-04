@@ -10,11 +10,11 @@ sudo stress -c 4
 
 
 TC↓これでたいだいた4秒くらい応答時間がかかる。
-sudo tc qdisc add dev wlan0 root tbf limit 1000b buffer 700b rate 50bps
+sudo tc qdisc add dev wlan0 root tbf limit 1000b buffer 700b rate 100bps
 
 
 TC削除
-tc qdisc del dev wlan0 root
+sudo tc qdisc del dev wlan0 root
 
 
 メモリ状態確認

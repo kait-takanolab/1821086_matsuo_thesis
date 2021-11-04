@@ -1,6 +1,0 @@
-#!/usr/bin/bash
-#echo "test"が10回実行される。
-for i in `seq 100`
-do
-sudo python ResponseSpeed_InsertIntoDB.py
-done

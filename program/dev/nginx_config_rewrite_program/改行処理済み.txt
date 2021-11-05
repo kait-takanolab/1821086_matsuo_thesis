@@ -1,0 +1,4 @@
+'worker_processes  1;\n',
+
+
+['worker_processes  1;\n','events {\n','worker_connections  1024;\n','}\n','http {\n','include       mime.types;\n','default_type  application/octet-stream;\n','sendfile        on;\n','keepalive_timeout  65;\n','upstream backend1{\n','server 192.168.1.81;\n','server 192.168.1.82;\n','server 192.168.1.83;}\n','server {\n','listen 80;\n','server_name  localhost;\n','location / {\n','proxy_pass http://backend1;\n','}\n','}\n','}\n']

@@ -9,6 +9,12 @@
 
 - https://github.com/kait-takanolab/1821086_matsuo_thesis/blob/main/meeting/1821086_matsuo_thesis.pptx
 
+
+### <img src="https://icooon-mono.com/i/icon_16004/icon_160041_64.png" height="30px;" /> デプロイ(卒論4章 実装システムの再現)
+
+- https://github.com/kait-takanolab/1821086_matsuo_thesis/tree/main/deploy
+
+
 ### <img src="https://icooon-mono.com/i/icon_16004/icon_160041_64.png" height="30px;" /> 実験用プログラム
 
 - https://github.com/kait-takanolab/1821086_matsuo_thesis/tree/main/program

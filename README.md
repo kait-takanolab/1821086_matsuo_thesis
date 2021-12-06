@@ -2,6 +2,7 @@
 <h2 align="center">1821086_matsuo_thesis</h2>
 
 ### <img src="https://icooon-mono.com/i/icon_15815/icon_158151_64.png" height="30px;" /> 卒論
+卒業論文はここにあります。
 
 - https://github.com/kait-takanolab/1821086_matsuo_thesis/blob/main/%E7%99%BA%E8%A1%A8%E7%94%A8/1821086-matsuo_thesis.docx
 

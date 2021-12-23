@@ -23,7 +23,21 @@ deploy<br>
  ｜              └ pdo_search_form.html<br>
  ├ method2動作の様子.wmv<br>
  └ README.md<br>
-
+ 
+ 配置後
+ 
+ ロードバランサの実行方法
+ 
+ 
+ cd deploy/LoadBalancer
+ sudo bash roop_LoadBarancer.sh　//起動しループさせるシェル
+ 
+ pipのアップグレードが必要と出た場合
+ pip install --upgrade pip
+ 
+ SQLITE3のインストール
+ pip install pip install pysqlite3
+ 
 
 ディレクトリ：Webserver<br>
 本提案システムのWebサーバ側で動かす「検索システム」のプログラムです。<br>

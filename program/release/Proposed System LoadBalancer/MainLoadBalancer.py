@@ -78,31 +78,7 @@ elif minmam == list3[0]:#82が平均最速なら
     f.writelines(datalist2)
 
 
-"""
-if minmam == list1[0]:#81が平均最速なら
-    print('\n過去24時間で「サーバ81」が一番応答速度が速いので優先接続されます。')
-    datalist2 = ['server 192.168.1.81 weight=1;\n']
-    f.writelines(datalist2)
-else:
-    datalist2 = ['server 192.168.1.81 weight=10;\n']
-    f.writelines(datalist2)
-    
-if minmam == list2[0]:#82が平均最速なら
-    print('\n過去24時間で「サーバ82」が一番応答速度が速いので優先接続されます。')
-    datalist3 = ['server 192.168.1.82 weight=1;\n']
-    f.writelines(datalist3)
-else:
-    datalist3 = ['server 192.168.1.82 weight=10;\n']
-    f.writelines(datalist3)
 
-if minmam == list3[0]:#83が平均最速なら
-    print('\n過去24時間で「サーバ83」が一番応答速度が速いので優先接続されます。')
-    datalist4 = ['server 192.168.1.83 weight=1;\n']
-    f.writelines(datalist4)
-else:
-    datalist4 = ['server 192.168.1.83 weight=10;\n']
-    f.writelines(datalist4)
-"""
     
 
 datalist5 = ['}\n','server{\n','listen 80;\n','server_name localhost;\n','location /{\n','proxy_pass http://backend1;\n','}\n','}\n','}\n']

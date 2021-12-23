@@ -1,7 +1,7 @@
 #!/usr/bin/bash
-for i in `seq 100`
+for i in `seq 100000`
 do
-sudo python3 MainLoadBalancer.py
-sudo python3 measure_evaluation_InsertDB.py
-sleep 20
+sudo python MainLoadBalancer.py
+sudo python measure_evaluation_InsertDB.py
+sleep 30
 done

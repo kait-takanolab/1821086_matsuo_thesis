@@ -1,6 +1,13 @@
 
 <h2 align="center">1821086_matsuo_thesis</h2>
 
+### <img src="https://icooon-mono.com/i/icon_15815/icon_158151_64.png" height="30px;" /> 要旨
+要旨のWordファイルはこちら。
+
+- https://github.com/kait-takanolab/1821086_matsuo_thesis/blob/main/%E7%99%BA%E8%A1%A8%E7%94%A8/1821086_matsuo_abstract.docx
+
+
+
 ### <img src="https://icooon-mono.com/i/icon_12063/icon_120631_64.png" height="30px;" /> 卒業研究発表会
 卒研発表会のスライドです。
 - https://github.com/kait-takanolab/1821086_matsuo_thesis/blob/main/%E7%99%BA%E8%A1%A8%E7%94%A8/1821086_%E5%8D%92%E6%A5%AD%E7%A0%94%E7%A9%B6%E7%99%BA%E8%A1%A8%E4%BC%9A.pptx
